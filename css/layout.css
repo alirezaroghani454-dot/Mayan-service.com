@@ -1,0 +1,118 @@
+/* ==========================================================================
+   مایان سرویس — css/layout.css
+   هدر، منو، فوتر، ساختار بخش‌ها، دکمه‌های شناور
+   ========================================================================== */
+
+/* ---------- نوار اعلان ---------- */
+.announce {
+  position: absolute; top: 0; inset-inline: 0; z-index: 61;
+  text-align: center; padding: 0.45rem 1rem; font-size: 0.9rem; font-weight: 600;
+  color: #1d1400; background: var(--grad-gold);
+}
+
+/* ---------- هدر ---------- */
+.site-header {
+  position: fixed; top: 0; inset-inline: 0; z-index: 60;
+  height: var(--header-h);
+  display: flex; align-items: center;
+  transition: background 0.4s, height 0.4s var(--ease), box-shadow 0.4s, border-color 0.4s;
+  border-bottom: 1px solid transparent;
+}
+.site-header::before {      /* پس‌زمینه شیشه‌ای روی pseudo-element تا منوی fixed خراب نشود */
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: 0;
+  background: rgba(2, 13, 31, 0.86);
+  -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
+  transition: opacity 0.4s;
+}
+.site-header.scrolled { height: 66px; border-bottom-color: var(--line); box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4); }
+.site-header.scrolled::before { opacity: 1; }
+.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.brand { display: flex; align-items: center; gap: 0.75rem; flex: none; }
+.brand .logo { width: 42px; height: 48px; flex: none; transition: transform 0.6s var(--ease-spring); }
+.brand:hover .logo { transform: rotateY(360deg) scale(1.08); }
+.brand-text { display: flex; flex-direction: column; line-height: 1.25; }
+.brand-name { font-size: 1.28rem; font-weight: 900; }
+.brand-sub { font-size: 0.68rem; letter-spacing: 0.22em; color: var(--muted); font-weight: 500; direction: ltr; text-align: right; }
+
+.main-nav { display: flex; align-items: center; gap: 0.2rem; }
+.main-nav a {
+  position: relative; padding: 0.5em 0.95em; border-radius: 999px;
+  font-size: 0.95rem; font-weight: 600; color: var(--soft);
+  transition: color 0.3s, background 0.3s;
+}
+.main-nav a::after {
+  content: ""; position: absolute; bottom: 2px; left: 50%; width: 0; height: 2px; border-radius: 2px;
+  background: var(--grad-gold); transform: translateX(-50%); transition: width 0.35s var(--ease);
+}
+.main-nav a:hover, .main-nav a.active { color: var(--gold-300); }
+.main-nav a:hover::after, .main-nav a.active::after { width: 52%; }
+.header-actions { display: flex; align-items: center; gap: 0.6rem; flex: none; }
+.menu-toggle { display: none; }
+
+/* پیشرفت اسکرول */
+.scroll-progress { position: fixed; top: 0; inset-inline: 0; height: 3px; z-index: 70; pointer-events: none; }
+.scroll-progress span { display: block; height: 100%; width: 100%; transform-origin: right center; transform: scaleX(0); background: var(--grad-gold); box-shadow: 0 0 14px rgba(252, 198, 76, 0.9); }
+
+/* ---------- بخش‌ها ---------- */
+.section { position: relative; overflow-x: clip; padding: clamp(4rem, 8vw, 7rem) 0; }
+.section-alt { background: linear-gradient(180deg, rgba(8, 38, 84, 0.28), rgba(8, 38, 84, 0.08)); border-block: 1px solid var(--line-soft); }
+.section-head { max-width: 760px; margin: 0 auto clamp(2rem, 5vw, 3.4rem); text-align: center; }
+.kicker {
+  display: inline-flex; align-items: center; gap: 0.6em; margin-bottom: 0.9rem;
+  font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em; color: var(--gold-300);
+}
+.kicker::before, .kicker::after { content: ""; width: 34px; height: 1.5px; background: linear-gradient(90deg, transparent, var(--gold-400)); }
+.kicker::after { transform: scaleX(-1); }
+.section-title { font-size: clamp(1.7rem, 4.2vw, 2.7rem); font-weight: 900; margin-bottom: 0.6rem; }
+.section-sub { color: var(--muted); font-size: clamp(0.98rem, 1.6vw, 1.1rem); margin: 0 auto; }
+
+/* ---------- فوتر ---------- */
+.site-footer { position: relative; margin-top: 2rem; padding: 4.5rem 0 1.5rem; border-top: 1px solid var(--line); background: linear-gradient(180deg, rgba(2, 13, 31, 0.2), #010814 70%); }
+.site-footer::before { content: ""; position: absolute; top: -1px; inset-inline: 10%; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-400), transparent); }
+.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1.2fr; gap: 2.5rem; }
+.footer-grid h4 { font-size: 1.02rem; color: var(--gold-300); margin-bottom: 1rem; }
+.footer-about p { color: var(--muted); max-width: 42ch; }
+.footer-links li { margin-bottom: 0.45rem; }
+.footer-links a { color: var(--soft); transition: color 0.25s, padding 0.3s var(--ease); }
+.footer-links a:hover { color: var(--gold-300); padding-inline-start: 0.5rem; }
+.footer-contact li { display: flex; gap: 0.7rem; align-items: flex-start; margin-bottom: 0.7rem; color: var(--soft); }
+.footer-contact .ic { color: var(--gold-400); margin-top: 0.35rem; }
+.social { display: flex; gap: 0.6rem; margin-top: 1.2rem; }
+.social a { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; border: 1px solid var(--line); color: var(--gold-300); transition: transform 0.3s var(--ease-spring), background 0.3s; }
+.social a:hover { background: var(--gold-400); color: #1d1400; transform: translateY(-4px) rotate(8deg); }
+.footer-bottom { margin-top: 3rem; padding-top: 1.4rem; border-top: 1px solid var(--line-soft); display: flex; flex-wrap: wrap; gap: 0.6rem 1.5rem; justify-content: space-between; color: var(--muted); font-size: 0.88rem; }
+
+/* ---------- دکمه‌های شناور (مثل سایت فعلی: سبد پایین‌راست، استعلام پایین‌چپ) ---------- */
+.fab {
+  position: fixed; z-index: 55;
+  bottom: calc(1.2rem + env(safe-area-inset-bottom));
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
+  transition: transform 0.4s var(--ease-spring), opacity 0.3s, box-shadow 0.3s;
+}
+.fab-cart {
+  right: 1.2rem; width: 62px; height: 62px; border-radius: 50%;
+  color: var(--gold-300);
+  background: radial-gradient(circle at 30% 25%, #14407f, #031632);
+  border: 1.5px solid var(--gold-500);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55), 0 0 36px rgba(252, 198, 76, 0.35);
+}
+.fab-cart .ic { font-size: 1.7rem; }
+.fab-cart:hover { transform: translateY(-4px) scale(1.07); }
+.fab-inquiry {
+  left: 1.2rem; padding: 0.75em 1.25em 0.75em 1.1em; border-radius: 999px;
+  font-weight: 700; font-size: 0.95rem; color: #1d1400; background: var(--grad-gold);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.5), 0 0 34px rgba(252, 198, 76, 0.45);
+}
+.fab-inquiry:hover { transform: translateY(-4px) scale(1.04); }
+.fab-inquiry::before { content: ""; position: absolute; inset: -5px; border-radius: inherit; border: 2px solid var(--gold-300); opacity: 0; animation: pulseRing 2.8s ease-out infinite; }
+@keyframes pulseRing { 0% { transform: scale(0.92); opacity: 0.75; } 100% { transform: scale(1.18); opacity: 0; } }
+.fab-top {
+  left: 1.2rem; bottom: calc(5.6rem + env(safe-area-inset-bottom)); width: 46px; height: 46px; border-radius: 14px;
+  color: #1d1400; background: var(--grad-gold); box-shadow: 0 10px 26px rgba(0, 0, 0, 0.5);
+  opacity: 0; transform: translateY(20px) scale(0.8); pointer-events: none;
+}
+.fab-top.show { opacity: 1; transform: none; pointer-events: auto; }
+.fab-top:hover { transform: translateY(-4px); }
+.fab-wa { right: 1.35rem; bottom: calc(5.5rem + env(safe-area-inset-bottom)); width: 50px; height: 50px; border-radius: 50%; color: #fff; background: linear-gradient(135deg, #38d97a, #1fae5a); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5); }
+.fab-wa .ic { font-size: 1.5rem; }
+.fab-wa:hover { transform: translateY(-4px) scale(1.08); }

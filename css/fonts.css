@@ -1,0 +1,20 @@
+/* ==========================================================================
+   مایان سرویس — css/fonts.css
+   فونت وزیرمتن (Vazirmatn) — خوانا و مدرن برای فارسی
+
+   ترتیب بارگذاری:
+   ۱) فونت نصب‌شده روی دستگاه کاربر
+   ۲) فایل محلی:  assets/fonts/Vazirmatn-Variable.woff2   (توصیه می‌شود فایل را آنجا قرار دهید)
+   ۳) CDN (jsDelivr) به‌عنوان پشتیبان
+   اگر هیچ‌کدام در دسترس نبود، فونت‌های خوب سیستم (Tahoma / SF Arabic / Noto) استفاده می‌شوند.
+   راهنمای دانلود فونت: فایل README.md
+   ========================================================================== */
+@font-face {
+  font-family: "Vazirmatn";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: local("Vazirmatn"), local("Vazirmatn UI"),
+       url("../assets/fonts/Vazirmatn-Variable.woff2") format("woff2"),
+       url("https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/fonts/webfonts/Vazirmatn%5Bwght%5D.woff2") format("woff2");
+}

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#020d1f">
+<title>پنل مدیریت — مایان سرویس</title>
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../css/fonts.css">
+<link rel="stylesheet" href="../css/icons.css">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<!-- ورود -->
+<main id="loginView" class="login" hidden>
+  <form id="loginForm" class="login-card" autocomplete="off" novalidate>
+    <div data-logo class="login-logo"></div>
+    <h1>پنل مدیریت مایان سرویس</h1>
+    <p class="muted" id="loginHint">رمز عبور را وارد کنید.</p>
+    <label class="fld"><span id="loginLabel">رمز عبور</span>
+      <input type="password" id="loginPass" autocomplete="current-password" required dir="ltr">
+    </label>
+    <label class="fld" id="loginPass2Wrap" hidden><span>تکرار رمز عبور</span>
+      <input type="password" id="loginPass2" autocomplete="new-password" dir="ltr">
+    </label>
+    <p class="err" id="loginErr" role="alert"></p>
+    <button class="btn gold" type="submit" id="loginBtn">ورود</button>
+    <p class="muted small" id="loginMode"></p>
+    <a class="muted small" href="../index.html">← بازگشت به سایت</a>
+  </form>
+</main>
+
+<!-- برنامه -->
+<div id="appView" class="app" hidden>
+  <aside class="side" id="side">
+    <div class="side-head"><span data-logo></span><div><b>مایان سرویس</b><small>پنل مدیریت</small></div></div>
+    <nav id="nav" aria-label="منوی پنل"></nav>
+    <div class="side-foot">
+      <span class="mode-badge" id="modeBadge"></span>
+      <a class="btn ghost sm" href="../index.html" target="_blank" rel="noopener"><i data-ic="eye"></i>دیدن سایت</a>
+      <button class="btn ghost sm" id="logoutBtn" type="button"><i data-ic="logout"></i>خروج</button>
+    </div>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="منو"><i data-ic="menu"></i></button>
+      <h2 id="viewTitle">داشبورد</h2>
+      <div class="top-actions">
+        <span class="dirty" id="dirtyTag" hidden>تغییرات ذخیره‌نشده</span>
+        <button class="btn gold sm" id="saveBtn" type="button" disabled><i data-ic="save"></i><span>انتشار تغییرات</span></button>
+      </div>
+    </header>
+    <main id="view" class="view" tabindex="-1"></main>
+  </div>
+</div>
+
+<div id="modalRoot"></div>
+<div id="toastRoot" class="toasts" aria-live="polite"></div>
+
+<script src="../js/core/utils.js"></script>
+<script src="../js/data/default-data.js"></script>
+<script src="../js/modules/icons.js"></script>
+<script src="js/admin-core.js"></script>
+<script src="js/admin-ui.js"></script>
+<script src="js/admin-listeditor.js"></script>
+<script src="js/admin-dashboard.js"></script>
+<script src="js/admin-products.js"></script>
+<script src="js/admin-content.js"></script>
+<script src="js/admin-inbox.js"></script>
+<script src="js/admin-settings.js"></script>
+<script src="js/admin-main.js"></script>
+</body>
+</html>

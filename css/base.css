@@ -1,0 +1,121 @@
+/* ==========================================================================
+   مایان سرویس — css/base.css
+   متغیرهای رنگ (طلایی + سرمه‌ای)، ریست، تایپوگرافی و ابزارک‌ها
+   ========================================================================== */
+:root {
+  /* سرمه‌ای عمیق (پس‌زمینه) */
+  --navy-1000: #010814;
+  --navy-950:  #020d1f;
+  --navy-900:  #031632;
+  --navy-850:  #051d41;
+  --navy-800:  #082654;
+  --navy-700:  #0d3170;
+
+  /* طلایی (رنگ برند مایان سرویس) */
+  --gold-100: #fff6d6;
+  --gold-200: #ffe9a8;
+  --gold-300: #ffd978;
+  --gold-400: #fcc64c;
+  --gold-500: #e8a921;
+  --gold-600: #c68a12;
+  --gold-700: #9a6a0c;
+
+  --text:   #f1f4fb;
+  --muted:  #a9b5cc;
+  --soft:   #d5dcec;
+  --line:   rgba(252, 198, 76, 0.2);
+  --line-soft: rgba(255, 255, 255, 0.08);
+
+  --ok:   #4fd6a0;
+  --warn: #ffb648;
+  --bad:  #ff6b7a;
+  --info: #6cb4ff;
+
+  --grad-gold: linear-gradient(135deg, #fff1b8 0%, #fcc64c 38%, #d99a1d 72%, #a86f0f 100%);
+  --grad-gold-text: linear-gradient(100deg, #fff3c4 0%, #fcc64c 45%, #e8a921 70%, #ffe08a 100%);
+  --grad-navy: linear-gradient(160deg, #082654 0%, #031632 60%, #020d1f 100%);
+
+  --glass: rgba(8, 30, 68, 0.62);
+  --glass-strong: rgba(5, 22, 52, 0.86);
+
+  --radius: 22px;
+  --radius-sm: 14px;
+  --radius-lg: 30px;
+
+  --shadow-card: 0 24px 50px -24px rgba(0, 0, 0, 0.7);
+  --shadow-gold: 0 18px 50px -18px rgba(252, 198, 76, 0.55);
+
+  --font: "Vazirmatn", "Vazir", Tahoma, "Segoe UI", "SF Arabic", "Geeza Pro", "Noto Sans Arabic", system-ui, -apple-system, sans-serif;
+
+  --header-h: 78px;
+  --container: 1220px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 14px);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.95;
+  color: var(--text);
+  background: var(--navy-950);
+  background-image:
+    radial-gradient(1200px 700px at 85% -10%, rgba(13, 49, 112, 0.55), transparent 60%),
+    radial-gradient(900px 600px at -10% 20%, rgba(252, 198, 76, 0.07), transparent 60%),
+    linear-gradient(180deg, #020d1f 0%, #031632 45%, #020d1f 100%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+body.is-loading { overflow: hidden; }
+body.no-scroll { overflow: hidden; }
+
+h1, h2, h3, h4, h5 { margin: 0 0 0.5em; line-height: 1.45; font-weight: 800; letter-spacing: 0; }
+p { margin: 0 0 1em; }
+a { color: inherit; text-decoration: none; }
+img, svg, canvas { max-width: 100%; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { background: none; border: 0; cursor: pointer; padding: 0; -webkit-tap-highlight-color: transparent; }
+[hidden] { display: none !important; }
+::selection { background: var(--gold-400); color: #1a1200; }
+
+:focus-visible {
+  outline: 2px solid var(--gold-300);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* اسکرول‌بار طلایی */
+@media (hover: hover) {
+  ::-webkit-scrollbar { width: 11px; height: 11px; }
+  ::-webkit-scrollbar-track { background: var(--navy-950); }
+  ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--gold-400), var(--gold-700)); border-radius: 10px; border: 2px solid var(--navy-950); }
+}
+
+/* ابزارک‌ها */
+.container { width: min(100% - 2rem, var(--container)); margin-inline: auto; }
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.gold-text {
+  background: var(--grad-gold-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.muted { color: var(--muted); }
+.nowrap { white-space: nowrap; }
+.num { font-feature-settings: "tnum"; }
+.show-sm { display: none !important; }

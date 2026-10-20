@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>مایان سرویس | خدمات پس از فروش و گارانتی</title>
+  <meta name="description" content="مایان سرویس با مدیریت خانم ملکی: ثبت و فعال‌سازی گارانتی، استعلام آنلاین گارانتی و درخواست خدمات تعمیر و نصب لوازم خانگی.">
+  <meta name="theme-color" content="#020d1f">
+  <meta property="og:title" content="مایان سرویس | خدمات پس از فروش و گارانتی">
+  <meta property="og:description" content="ثبت و فعال‌سازی گارانتی، استعلام آنلاین و درخواست خدمات لوازم خانگی.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fa_IR">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <script>
+    /* علامت‌گذاری JS + شبکه ایمنی: اگر هر مشکلی پیش آمد، محتوا همیشه نمایش داده می‌شود */
+    document.documentElement.className += ' js';
+    setTimeout(function () {
+      var b = document.body;
+      if (b && !b.classList.contains('ready')) { b.classList.add('ready'); document.documentElement.classList.add('no-motion'); }
+    }, 7000);
+  </script>
+
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/icons.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/effects.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <noscript><style>#preloader{display:none}[data-reveal]{opacity:1!important;translate:none!important}.drawer{display:none}</style></noscript>
+</head>
+
+<body class="is-loading">
+
+  <!-- ===== پری‌لودر ===== -->
+  <div id="preloader" aria-hidden="true">
+    <div class="pl-inner">
+      <svg class="pl-logo" viewBox="0 0 64 72">
+        <defs><linearGradient id="plG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff3c4"/><stop offset=".5" stop-color="#fcc64c"/><stop offset="1" stop-color="#b9801a"/></linearGradient></defs>
+        <path class="o" d="M32 3L58 12v22c0 17-11 28-26 35C17 62 6 51 6 34V12z"/>
+        <path class="m" d="M19 46V25.5l6.5-1.5L32 36l6.500-12 6.500 1.500V46h-5.200V31.500L32 44.500l-7.800-13V46z"/>
+      </svg>
+      <div class="pl-name gold-text">مایان سرویس</div>
+      <div class="pl-bar"><i></i></div>
+    </div>
+  </div>
+
+  <div class="scroll-progress" aria-hidden="true"><span id="scrollBar"></span></div>
+  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+  <canvas id="gold-dust" aria-hidden="true"></canvas>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <div class="announce" id="announceBar" hidden></div>
+
+  <!-- ===== هدر ===== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="مایان سرویس — صفحه اصلی">
+        <span class="logo" data-logo></span>
+        <span class="brand-text">
+          <span class="brand-name gold-text js-brand">مایان سرویس</span>
+          <span class="brand-sub js-brand-latin">MAYAN SERVICE</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="منوی اصلی">
+        <a href="#home" style="--i:0">خانه</a>
+        <a href="#services" style="--i:1">خدمات</a>
+        <a href="#products" style="--i:2">محصولات</a>
+        <a href="#inquiry" style="--i:3">استعلام گارانتی</a>
+        <a href="#request" style="--i:4">درخواست خدمات</a>
+        <a href="#faq" style="--i:5">سوالات متداول</a>
+        <a href="#contact" style="--i:6">تماس با ما</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-gold btn-sm hide-sm hide-md" href="#products" data-magnetic><i data-ic="shield-check"></i> ثبت گارانتی</a>
+        <button class="icon-btn cart-trigger" type="button" aria-label="سبد ثبت گارانتی">
+          <i data-ic="bag"></i><span class="badge-count cart-count" data-n="0">۰</span>
+        </button>
+        <button class="icon-btn menu-toggle" id="menuToggle" type="button" aria-label="باز و بسته کردن منو" aria-expanded="false" aria-controls="mainNav">
+          <i data-ic="menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ===================== هیرو ===================== -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow" data-reveal="down"><span class="dot"></span><span id="heroEyebrow">با مدیریت خانم ملکی</span></span>
+          <h1 class="hero-title" id="heroTitle">
+            <span class="top gold-text" id="heroTitleTop">مایان سرویس</span>
+            <span class="main" id="heroTitleMain">خدمات پس از فروش و گارانتی</span>
+          </h1>
+          <p class="hero-lead" id="heroLead" data-reveal="up" style="--d:.45s">ثبت و فعال‌سازی گارانتی، استعلام آنلاین و درخواست خدمات تعمیر و نصب لوازم خانگی؛ همه‌چیز در یک سایت، بدون معطلی.</p>
+          <div class="hero-cta" data-reveal="up" style="--d:.6s">
+            <a class="btn btn-gold btn-lg" href="#products" data-magnetic><i data-ic="shield-check"></i> فعال‌سازی ثبت گارانتی</a>
+            <a class="btn btn-outline btn-lg" href="#inquiry" data-magnetic><i data-ic="search"></i> استعلام گارانتی</a>
+          </div>
+          <ul class="hero-badges" data-reveal="up" style="--d:.75s">
+            <li><i data-ic="check"></i> ثبت آنلاین بدون مراجعه</li>
+            <li><i data-ic="check"></i> کد پیگیری برای هر سفارش</li>
+            <li><i data-ic="check"></i> پشتیبانی تلفنی و واتساپ</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" data-reveal="zoom" style="--d:.3s">
+          <div class="emblem-stage" id="emblemStage">
+            <div class="emblem-fallback" id="emblemFallback" hidden><div class="fb-shield" data-logo></div></div>
+            <canvas id="emblemCanvas" aria-label="نشان سه‌بعدی طلایی مایان سرویس" role="img"></canvas>
+          </div>
+          <div class="float-chip glass c1"><i data-ic="shield-check"></i><div>ثبت گارانتی<small>آنلاین و سریع</small></div></div>
+          <div class="float-chip glass c2"><i data-ic="search"></i><div>استعلام آنی<small>با کد یا شماره سریال</small></div></div>
+          <div class="float-chip glass c3"><i data-ic="headset"></i><div>پشتیبانی<small>تلفن و واتساپ</small></div></div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="stats" id="statsRow"></div>
+      </div>
+      <span class="scroll-hint" aria-hidden="true"></span>
+    </section>
+
+    <div class="marquee" aria-hidden="true"><div class="marquee-track" id="marqueeTrack"></div></div>
+
+    <!-- ===================== خدمات ===================== -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head" data-reveal="up">
+          <span class="kicker">خدمات ما</span>
+          <h2 class="section-title">هر آنچه بعد از خرید <span class="gold-text">نیاز دارید</span></h2>
+          <p class="section-sub">از ثبت گارانتی تا تعمیر، نصب و پشتیبانی؛ مایان سرویس در تمام مراحل کنار شماست.</p>
+        </div>
+        <div class="svc-grid" id="servicesGrid"></div>
+      </div>
+    </section>
+
+    <!-- ===================== حلقه سه‌بعدی دسته‌بندی‌ها ===================== -->
+    <section class="section section-alt ring-section" id="categories">
+      <div class="container">
+        <div class="section-head" data-reveal="up">
+          <span class="kicker">دستگاه‌های تحت پوشش</span>
+          <h2 class="section-title">دسته‌بندی <span class="gold-text">محصولات</span></h2>
+          <p class="section-sub">حلقه را بچرخانید و روی دسته‌ی دلخواه بزنید تا محصولات همان دسته نمایش داده شود.</p>
+        </div>
+        <div class="ring-stage" id="ringStage" data-reveal="zoom"><div class="ring" id="ring3d"></div></div>
+        <p class="ring-hint"><i data-ic="refresh"></i> بکشید و بچرخانید</p>
+      </div>
+    </section>
+
+    <!-- ===================== محصولات ===================== -->
+    <section class="section" id="products">
+      <div class="container">
+        <div class="section-head" data-reveal="up">
+          <span class="kicker">ثبت گارانتی</span>
+          <h2 class="section-title">محصول خود را <span class="gold-text">انتخاب کنید</span></h2>
+          <p class="section-sub">روی «فعال‌سازی ثبت گارانتی» بزنید تا محصول به سبد اضافه شود؛ سپس اطلاعات خود را وارد کنید.</p>
+        </div>
+
+        <div class="shop-toolbar" data-reveal="up">
+          <label class="search-box">
+            <span class="sr-only">جستجوی محصول</span>
+            <i data-ic="search"></i>
+            <input class="input" id="productSearch" type="search" placeholder="جستجوی محصول (مثلاً کولر گازی)" autocomplete="off">
+          </label>
+          <select class="select" id="productSort" aria-label="مرتب‌سازی">
+            <option value="default">مرتب‌سازی: پیش‌فرض</option>
+            <option value="asc">ارزان‌ترین</option>
+            <option value="desc">گران‌ترین</option>
+            <option value="name">بر اساس نام</option>
+          </select>
+        </div>
+        <div class="chips-scroll" id="catChips" data-reveal="up"></div>
+        <div class="result-meta" id="resultMeta"></div>
+        <div class="p-grid" id="productGrid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- ===================== استعلام ===================== -->
+    <section class="section section-glow" id="inquiry">
+      <div class="container inq-grid">
+        <div class="inq-copy" data-reveal="right">
+          <span class="kicker">استعلام آنلاین</span>
+          <h2 class="section-title">وضعیت گارانتی‌تان را <span class="gold-text">همین حالا ببینید</span></h2>
+          <p class="section-sub">کد گارانتی یا شماره سریال دستگاه را وارد کنید. کد پیگیری سفارش یا درخواست خدمات را هم می‌توانید از همین‌جا پیگیری کنید.</p>
+          <ul class="check-list">
+            <li><span class="tick" data-ic="check"></span><span>مشاهده‌ی تاریخ شروع و پایان گارانتی</span></li>
+            <li><span class="tick" data-ic="check"></span><span>نمایش مدت باقی‌مانده با نمودار</span></li>
+            <li><span class="tick" data-ic="check"></span><span>پیگیری مرحله‌به‌مرحله‌ی سفارش و درخواست خدمات</span></li>
+          </ul>
+        </div>
+
+        <div class="inq-card glass" data-reveal="left">
+          <div class="tabs" role="tablist" aria-label="نوع استعلام">
+            <button class="tab active" id="tabWarranty" role="tab" aria-selected="true" type="button" data-mode="warranty">استعلام گارانتی</button>
+            <button class="tab" id="tabTrack" role="tab" aria-selected="false" type="button" data-mode="track">پیگیری سفارش</button>
+          </div>
+          <form class="inq-form" id="inquiryForm" novalidate>
+            <div class="field">
+              <label for="inqInput" id="inqLabel">کد گارانتی یا شماره سریال</label>
+              <div class="inq-input-wrap">
+                <input class="input" id="inqInput" type="text" inputmode="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="مثلاً DEMO-1234">
+                <i data-ic="shield-check"></i>
+              </div>
+              <span class="err">لطفاً کد را وارد کنید.</span>
+            </div>
+            <button class="btn btn-gold btn-lg btn-block" type="submit" id="inqSubmit"><i data-ic="search"></i> <span>استعلام کنید</span></button>
+            <div class="demo-hint" id="demoHint" hidden>برای آزمایش از کد <button type="button" id="demoFill">DEMO-1234</button> استفاده کنید.</div>
+          </form>
+          <div class="inq-result" id="inqResult" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== مراحل ===================== -->
+    <section class="section section-alt" id="steps">
+      <div class="container">
+        <div class="section-head" data-reveal="up">
+          <span class="kicker">مراحل کار</span>
+          <h2 class="section-title">چهار قدم تا <span class="gold-text">گارانتی فعال</span></h2>
+          <p class="section-sub">فرایند ثبت گارانتی ساده و شفاف است.</p>
+        </div>
+        <div class="steps" id="stepsList"></div>
+      </div>
+    </section>
+
+    <!-- ===================== چرا مایان سرویس ===================== -->
+    <section class="section" id="why">
+      <div class="container">
+        <div class="section-head" data-reveal="up">
+          <span class="kicker">چرا مایان سرویس؟</span>
+          <h2 class="section-title">تجربه‌ای <span class="gold-text">ساده و مطمئن</span></h2>
+          <p class="section-sub">همه‌چیز را طوری طراحی کرده‌ایم که کارهای پس از فروش شما سریع و بی‌دردسر انجام شود.</p>
+        </div>
+        <div class="feat-grid" id="featGrid"></div>
+      </div>
+    </section>
+
+    <!-- ===================== نظرات (فقط اگر مدیر نظری ثبت کرده باشد) ===================== -->
+    <section class="section section-alt" id="reviews" hidden>
+      <div class="container">
+        <div class="section-head" data-reveal="up">
+          <span class="kicker">بازخورد مشتریان</span>
+          <h2 class="section-title" id="reviewsTitle">نظر مشتریان</h2>
+        </div>
+        <div class="rev-grid" id="revGrid"></div>
+      </div>
+    </section>
+
+    <!-- ===================== سوالات متداول ===================== -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head" data-reveal="up">
+          <span class="kicker">پرسش‌های پرتکرار</span>
+          <h2 class="section-title">سوالات <span class="gold-text">متداول</span></h2>
+          <p class="section-sub">پاسخ رایج‌ترین پرسش‌ها را اینجا بخوانید.</p>
+        </div>
+        <div class="faq" id="faqList"></div>
+      </div>
+    </section>
+
+    <!-- ===================== درخواست خدمات ===================== -->
+    <section class="section section-alt" id="request">
+      <div class="container">
+        <div class="section-head" data-reveal="up">
+          <span class="kicker">درخواست خدمات</span>
+          <h2 class="section-title">تعمیر، نصب یا سرویس <span class="gold-text">ثبت کنید</span></h2>
+          <p class="section-sub">فرم زیر را کامل کنید تا کد پیگیری صادر شود و همکاران ما با شما هماهنگ کنند.</p>
+        </div>
+        <div class="req-grid">
+          <div class="req-card glass" data-reveal="right">
+            <form id="requestForm" novalidate>
+              <input class="hp-field" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+              <div class="form-grid">
+                <div class="field">
+                  <label for="rqType">نوع درخواست<span class="req">*</span></label>
+                  <select class="select" id="rqType" name="type" required>
+                    <option value="تعمیر">تعمیر</option>
+                    <option value="نصب و راه‌اندازی">نصب و راه‌اندازی</option>
+                    <option value="سرویس دوره‌ای">سرویس دوره‌ای</option>
+                    <option value="مشاوره فنی">مشاوره فنی</option>
+                    <option value="سایر">سایر</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="rqDevice">نوع دستگاه<span class="req">*</span></label>
+                  <select class="select" id="rqDevice" name="device" required></select>
+                </div>
+                <div class="field"><label for="rqBrand">برند</label><input class="input" id="rqBrand" name="brand" type="text" placeholder="مثلاً سامسونگ" maxlength="60"></div>
+                <div class="field"><label for="rqModel">مدل</label><input class="input" id="rqModel" name="model" type="text" maxlength="60"></div>
+                <div class="field full"><label for="rqSerial">شماره سریال یا کد گارانتی (اختیاری)</label><input class="input" id="rqSerial" name="serial" type="text" dir="ltr" maxlength="60"></div>
+                <div class="field full">
+                  <label for="rqProblem">توضیح مشکل یا درخواست<span class="req">*</span></label>
+                  <textarea class="textarea" id="rqProblem" name="problem" required minlength="5" maxlength="1000" placeholder="مشکل دستگاه یا خدمت مورد نظر را شرح دهید…"></textarea>
+                  <span class="err">لطفاً حداقل چند کلمه توضیح بنویسید.</span>
+                </div>
+                <div class="field"><label for="rqName">نام و نام خانوادگی<span class="req">*</span></label><input class="input" id="rqName" name="name" type="text" required maxlength="80" autocomplete="name"><span class="err">نام را وارد کنید.</span></div>
+                <div class="field"><label for="rqMobile">شماره موبایل<span class="req">*</span></label><input class="input" id="rqMobile" name="mobile" type="tel" inputmode="tel" required dir="ltr" placeholder="09xxxxxxxxx" autocomplete="tel"><span class="err">شماره موبایل معتبر وارد کنید (مثل ۰۹۱۲۱۲۳۴۵۶۷).</span></div>
+                <div class="field"><label for="rqCity">شهر</label><input class="input" id="rqCity" name="city" type="text" maxlength="60" autocomplete="address-level2"></div>
+                <div class="field">
+                  <label for="rqTime">زمان مناسب تماس</label>
+                  <select class="select" id="rqTime" name="preferred"><option value="هر زمان">هر زمان</option><option value="صبح">صبح</option><option value="ظهر">ظهر</option><option value="عصر">عصر</option><option value="شب">شب</option></select>
+                </div>
+                <div class="field full"><label for="rqAddress">نشانی</label><textarea class="textarea" id="rqAddress" name="address" maxlength="400" style="min-height:84px" autocomplete="street-address"></textarea></div>
+              </div>
+              <div class="form-actions" style="margin-top:1.4rem">
+                <button class="btn btn-gold btn-lg" type="submit" id="rqSubmit"><i data-ic="check"></i> <span>ثبت درخواست</span></button>
+                <span class="form-note">اطلاعات شما فقط برای هماهنگی خدمات استفاده می‌شود.</span>
+              </div>
+            </form>
+            <div id="requestResult"></div>
+          </div>
+
+          <aside class="req-aside" data-reveal="left">
+            <div class="aside-card glass" data-tilt>
+              <h4>قبل از ثبت درخواست</h4>
+              <ul>
+                <li><i data-ic="check"></i><span>مدل و برند دستگاه را آماده داشته باشید.</span></li>
+                <li><i data-ic="check"></i><span>اگر گارانتی دارید، شماره سریال یا کد گارانتی را بنویسید.</span></li>
+                <li><i data-ic="check"></i><span>مشکل دستگاه را کامل شرح دهید تا سریع‌تر بررسی شود.</span></li>
+              </ul>
+            </div>
+            <div class="aside-card glass gear-3d" aria-hidden="true">
+              <div class="gear">
+                <svg viewBox="-50 -50 100 100"><defs><linearGradient id="gearG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff3c4"/><stop offset=".5" stop-color="#fcc64c"/><stop offset="1" stop-color="#b9801a"/></linearGradient></defs>
+                  <path id="gearPath" fill="url(#gearG)" stroke="#7a5410" stroke-width="1.4" d=""/><circle r="14" fill="#031632" stroke="#c58a14" stroke-width="2"/></svg>
+              </div>
+            </div>
+            <a class="btn btn-outline btn-block js-wa-link" href="#contact" target="_blank" rel="noopener"><i data-ic="whatsapp"></i> گفتگو در واتساپ</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== تماس ===================== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head" data-reveal="up">
+          <span class="kicker">تماس با ما</span>
+          <h2 class="section-title">در کنار شما <span class="gold-text">هستیم</span></h2>
+          <p class="section-sub">پرسش، پیشنهاد یا انتقادی دارید؟ با ما در میان بگذارید.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="info-list" id="contactInfo"></div>
+          <div class="contact-form-card glass" data-reveal="left">
+            <form id="contactForm" novalidate>
+              <input class="hp-field" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+              <div class="form-grid">
+                <div class="field"><label for="ctName">نام<span class="req">*</span></label><input class="input" id="ctName" name="name" type="text" required maxlength="80"><span class="err">نام را وارد کنید.</span></div>
+                <div class="field"><label for="ctMobile">شماره تماس</label><input class="input" id="ctMobile" name="mobile" type="tel" dir="ltr" placeholder="09xxxxxxxxx"><span class="err">شماره موبایل معتبر نیست.</span></div>
+                <div class="field full"><label for="ctSubject">موضوع</label><input class="input" id="ctSubject" name="subject" type="text" maxlength="120"></div>
+                <div class="field full"><label for="ctText">پیام<span class="req">*</span></label><textarea class="textarea" id="ctText" name="text" required minlength="5" maxlength="1500"></textarea><span class="err">پیام خود را بنویسید.</span></div>
+              </div>
+              <div class="form-actions" style="margin-top:1.3rem"><button class="btn btn-gold btn-lg" type="submit" id="ctSubmit"><i data-ic="message"></i> <span>ارسال پیام</span></button></div>
+            </form>
+            <div id="contactResult"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== فوتر ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a class="brand" href="#home" style="margin-bottom:1rem"><span class="logo" data-logo></span><span class="brand-text"><span class="brand-name gold-text js-brand">مایان سرویس</span><span class="brand-sub js-brand-latin">MAYAN SERVICE</span></span></a>
+          <p id="footerAbout">مایان سرویس با مدیریت خانم ملکی، ارائه‌دهنده خدمات پس از فروش و ثبت گارانتی لوازم خانگی است.</p>
+          <div class="social" id="socialLinks"></div>
+        </div>
+        <div>
+          <h4>دسترسی سریع</h4>
+          <ul class="footer-links">
+            <li><a href="#services">خدمات</a></li>
+            <li><a href="#products">محصولات و ثبت گارانتی</a></li>
+            <li><a href="#inquiry">استعلام گارانتی</a></li>
+            <li><a href="#request">درخواست خدمات</a></li>
+            <li><a href="#faq">سوالات متداول</a></li>
+            <li><a href="#contact">تماس با ما</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>اطلاعات تماس</h4>
+          <ul class="footer-contact" id="footerContact"></ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="footYear">۱۴۰۵</span> <span class="js-brand">مایان سرویس</span> — تمامی حقوق محفوظ است.</span>
+        <span>مدیریت: <b class="js-manager">خانم ملکی</b></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== دکمه‌های شناور ===================== -->
+  <a class="fab fab-inquiry" href="#inquiry" aria-label="استعلام گارانتی"><i data-ic="shield-check"></i><span>استعلام گارانتی</span></a>
+  <button class="fab fab-top" id="toTop" type="button" aria-label="بازگشت به بالا"><i data-ic="arrow-up"></i></button>
+  <a class="fab fab-wa js-wa-link" href="#contact" target="_blank" rel="noopener" aria-label="واتساپ" hidden><i data-ic="whatsapp"></i></a>
+  <button class="fab fab-cart cart-trigger" type="button" aria-label="سبد ثبت گارانتی"><i data-ic="bag"></i><span class="badge-count cart-count" data-n="0">۰</span></button>
+
+  <!-- ===================== سبد خرید ===================== -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="سبد ثبت گارانتی" aria-hidden="true">
+    <div class="drawer-head">
+      <h3><i data-ic="bag"></i> سبد ثبت گارانتی</h3>
+      <button class="icon-btn" id="drawerClose" type="button" aria-label="بستن سبد"><i data-ic="x"></i></button>
+    </div>
+    <div class="drawer-body" id="drawerBody"></div>
+    <div class="drawer-foot" id="drawerFoot"></div>
+  </aside>
+
+  <noscript><div style="position:fixed;inset:auto 0 0 0;z-index:999;padding:.8rem;text-align:center;background:#fcc64c;color:#1d1400;font-weight:700">برای نمایش کامل سایت، لطفاً جاوااسکریپت مرورگر را فعال کنید.</div></noscript>
+
+  <!-- ===================== اسکریپت‌ها (هر فایل یک وظیفه) ===================== -->
+  <script src="js/data/default-data.js"></script>
+  <script src="js/core/utils.js"></script>
+  <script src="js/core/store.js"></script>
+  <script src="js/modules/icons.js"></script>
+  <script src="js/modules/render-content.js"></script>
+  <script src="js/modules/products.js"></script>
+  <script src="js/modules/cart.js"></script>
+  <script src="js/modules/forms.js"></script>
+  <script src="js/modules/effects-tilt.js"></script>
+  <script src="js/modules/ring3d.js"></script>
+  <script src="js/modules/motion.js"></script>
+  <script src="js/modules/gold-dust.js"></script>
+  <script src="js/modules/gl-math.js"></script>
+  <script src="js/modules/gl-shaders.js"></script>
+  <script src="js/modules/webgl-emblem.js"></script>
+  <script src="js/modules/ui-shell.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
